@@ -1,26 +1,114 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-playfair: var(--font-playfair), "Playfair Display", serif;
+  --font-montserrat: var(--font-montserrat), "Montserrat", sans-serif;
+  --font-sans: var(--font-montserrat);
+
+  --color-background: #0a0a0a;
+  --color-foreground: #e3e2e7;
+
+  --color-surface: #121317;
+  --color-surface-dim: #121317;
+  --color-surface-bright: #38393d;
+  --color-surface-container: #1e1f23;
+  --color-surface-container-high: #292a2e;
+  --color-surface-container-highest: #343539;
+  --color-surface-variant: #343539;
+
+  --color-primary: #d4af37;
+  --color-primary-variant: #f2ca50;
+  --color-primary-container: #d4af37;
+  --color-on-primary: #3c2f00;
+  --color-on-primary-container: #554300;
+
+  --color-on-surface: #e3e2e7;
+  --color-on-surface-variant: #d0c5af;
+
+  --color-outline: #99907c;
+  --color-outline-variant: #4d4635;
+
+  --color-error: #ffb4ab;
+
+  --color-secondary: #0a0a0a;
+  --color-tertiary: #1c1c1c;
+
+  --color-gold-gradient-start: #d4af37;
+  --color-gold-gradient-end: #f2d388;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-montserrat);
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-playfair);
+  }
+
+  ::selection {
+    background: rgba(212, 175, 55, 0.3);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  /* ── Glassmorphism ── */
+  .glassmorphism {
+    background-color: rgba(28, 28, 28, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top-color: rgba(255, 255, 255, 0.18);
+    border-left-color: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+  }
+
+  /* ── Gold gradient text ── */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #d4af37 0%, #f2d388 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Gold gradient background ── */
+  .bg-gradient-gold {
+    background: linear-gradient(135deg, #d4af37 0%, #f2d388 100%);
+  }
+
+  /* ── Custom Scrollbar ── */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #141414;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #4d4635;
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #d4af37;
+  }
+
+  /* ── Dot pattern ── */
+  .dot-pattern {
+    background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.08) 1px, transparent 0);
+    background-size: 32px 32px;
+  }
+
+  /* ── Glow effects ── */
+  .glow-gold {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  }
+  .glow-gold-sm {
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+  }
 }

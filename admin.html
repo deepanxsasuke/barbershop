@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RoyalCuts Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#e3e2e7",
+                        "secondary-container": "#4a4949",
+                        "inverse-primary": "#735c00",
+                        "surface-container-lowest": "#0d0e12",
+                        "on-secondary-container": "#bab8b7",
+                        "inverse-on-surface": "#2f3034",
+                        "on-surface-variant": "#d0c5af",
+                        "outline": "#99907c",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-tertiary-container": "#454544",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#121317",
+                        "surface-bright": "#38393d",
+                        "on-background": "#e3e2e7",
+                        "on-tertiary": "#313030",
+                        "surface-container-low": "#1a1b1f",
+                        "surface-tint": "#e9c349",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-secondary": "#313030",
+                        "background": "#121317",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "on-primary-fixed": "#241a00",
+                        "on-error": "#690005",
+                        "surface-container": "#1e1f23",
+                        "outline-variant": "#4d4635",
+                        "on-primary-fixed-variant": "#574500",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-secondary-fixed-variant": "#474646",
+                        "surface-container-highest": "#343539",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#292a2e",
+                        "on-primary-container": "#554300",
+                        "tertiary": "#d0cdcd",
+                        "error-container": "#93000a",
+                        "secondary": "#c9c6c5",
+                        "on-primary": "#3c2f00",
+                        "secondary-fixed-dim": "#c9c6c5",
+                        "on-surface": "#e3e2e7",
+                        "primary-fixed": "#ffe088",
+                        "surface-dim": "#121317",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#b4b2b2",
+                        "surface-variant": "#343539",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "tertiary-fixed": "#e5e2e1",
+                        "primary": "#f2ca50",
+                        "primary-container": "#d4af37"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-max-width": "1280px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Playfair Display"],
+                        "label-md": ["Montserrat"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Montserrat"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Montserrat"],
+                        "caption": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0A; /* Level 0 Base */
+        }
+        .glass-panel {
+            background-color: rgba(28, 28, 28, 0.7); /* Level 1 Surface with transparency */
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top-color: rgba(255, 255, 255, 0.2); /* Inner glow */
+        }
+        .btn-primary {
+            background: linear-gradient(to right, #D4AF37, #F2D388);
+            color: #0A0A0A;
+        }
+    </style>
+</head>
+<body class="text-on-surface bg-background flex h-screen overflow-hidden antialiased">
+<!-- SideNavBar -->
+<nav class="bg-surface-container dark:bg-surface-container h-screen w-64 fixed left-0 top-0 border-r border-outline-variant/10 shadow-xl flex flex-col p-unit gap-4 z-50">
+<div class="px-4 py-6">
+<h1 class="font-display-lg text-headline-sm text-primary mb-1">RoyalCuts</h1>
+<p class="font-body-md text-caption text-on-surface-variant">Admin Portal</p>
+</div>
+<div class="flex-1 flex flex-col gap-2 px-2 mt-4">
+<a class="bg-primary-container text-on-primary-container rounded-lg font-bold transition-all duration-200 ease-in-out flex items-center gap-3 p-3 font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                Overview
+            </a>
+<a class="text-on-surface-variant hover:text-primary hover:bg-secondary-container/50 transition-all duration-200 ease-in-out flex items-center gap-3 p-3 rounded-lg font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+                Schedule
+            </a>
+<a class="text-on-surface-variant hover:text-primary hover:bg-secondary-container/50 transition-all duration-200 ease-in-out flex items-center gap-3 p-3 rounded-lg font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">group</span>
+                Staff
+            </a>
+<a class="text-on-surface-variant hover:text-primary hover:bg-secondary-container/50 transition-all duration-200 ease-in-out flex items-center gap-3 p-3 rounded-lg font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+                Analytics
+            </a>
+<a class="text-on-surface-variant hover:text-primary hover:bg-secondary-container/50 transition-all duration-200 ease-in-out flex items-center gap-3 p-3 rounded-lg font-body-md text-body-md mt-auto" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</div>
+<div class="p-4 mt-auto">
+<button class="btn-primary w-full py-3 rounded-lg font-label-md text-label-md uppercase tracking-widest shadow-[0_4px_20px_rgba(212,175,55,0.3)] hover:scale-[1.02] transition-transform flex justify-center items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+                New Appointment
+            </button>
+</div>
+<div class="px-4 pb-6 pt-4 border-t border-outline-variant/10 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden border border-outline-variant/30">
+<img alt="Admin Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a confident male manager in a luxury salon setting. The background is slightly blurred showing elegant dark decor and warm lighting. The image conveys authority, professionalism, and high-end service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLWUSDP3UbBPxW5Vs-KjjaaW0Q77FgOwTI3m0LFG8Dz8EwsGtql9-2lE1LMpT5JvnCkKcs3Mta2wAJ-w5cVYglSRcnOVagEIZQfiM9-UeXEobbEwG8_snZcaie2_o9kNZyJkmTDWuNFcmakkFjAapXFaIBDpE0s0BYbS8Btx26PzkPQ8FPukjEi9zQlqcRwfRcOjP4Rqe598Ps54woq5n4xpm22LuTy0FwQrKE3dzm2qdfym2dCmSIKMrkSDlFjzEeiMc9NsfdwQ_Z"/>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Alex Mercer</p>
+<p class="font-caption text-caption text-on-surface-variant">Manager</p>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 h-screen overflow-y-auto bg-background p-margin-desktop">
+<!-- Header Section -->
+<header class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Dashboard Overview</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Today's metrics and upcoming appointments.</p>
+</div>
+<div class="flex gap-4">
+<button class="glass-panel text-on-surface px-4 py-2 rounded-lg font-label-md text-label-md uppercase tracking-widest flex items-center gap-2 hover:border-primary transition-colors">
+<span class="material-symbols-outlined">download</span>
+                    Export Report
+                </button>
+</div>
+</header>
+<!-- Revenue Analytics Cards (Bento Grid) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- Monthly Revenue -->
+<div class="glass-panel p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-primary/20 transition-all duration-500"></div>
+<div class="flex justify-between items-start mb-8 relative z-10">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary">account_balance_wallet</span>
+</div>
+<span class="font-caption text-caption text-primary bg-primary/10 px-2 py-1 rounded">+12.5%</span>
+</div>
+<div class="relative z-10">
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-widest mb-1">Monthly Revenue</p>
+<p class="font-headline-lg text-headline-lg text-on-surface">$42,500.00</p>
+</div>
+</div>
+<!-- Average Booking Value -->
+<div class="glass-panel p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-primary/20 transition-all duration-500"></div>
+<div class="flex justify-between items-start mb-8 relative z-10">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary">receipt_long</span>
+</div>
+<span class="font-caption text-caption text-primary bg-primary/10 px-2 py-1 rounded">+5.2%</span>
+</div>
+<div class="relative z-10">
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-widest mb-1">Avg. Booking Value</p>
+<p class="font-headline-lg text-headline-lg text-on-surface">$125.00</p>
+</div>
+</div>
+<!-- Customer Stats -->
+<div class="glass-panel p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-primary/20 transition-all duration-500"></div>
+<div class="flex justify-between items-start mb-8 relative z-10">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary">groups</span>
+</div>
+<span class="font-caption text-caption text-primary bg-primary/10 px-2 py-1 rounded">85% Ret.</span>
+</div>
+<div class="relative z-10">
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-widest mb-1">Total Active Clients</p>
+<p class="font-headline-lg text-headline-lg text-on-surface">1,248</p>
+</div>
+</div>
+</section>
+<!-- Main Content Area Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pb-12">
+<!-- Left Column: Appointments & Schedule -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Appointment Management Table -->
+<section class="glass-panel rounded-xl overflow-hidden">
+<div class="p-6 border-b border-white/5 flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">Upcoming Appointments</h3>
+<button class="text-primary hover:text-primary-fixed transition-colors font-label-md text-label-md">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-variant/30 border-b border-white/5">
+<th class="p-4 font-caption text-caption text-on-surface-variant uppercase tracking-widest">Customer</th>
+<th class="p-4 font-caption text-caption text-on-surface-variant uppercase tracking-widest">Barber</th>
+<th class="p-4 font-caption text-caption text-on-surface-variant uppercase tracking-widest">Service</th>
+<th class="p-4 font-caption text-caption text-on-surface-variant uppercase tracking-widest">Time</th>
+<th class="p-4 font-caption text-caption text-on-surface-variant uppercase tracking-widest">Status</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md">
+<tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+<td class="p-4 text-on-surface font-medium">Michael Chang</td>
+<td class="p-4 text-on-surface-variant">David</td>
+<td class="p-4 text-on-surface-variant">Executive Cut</td>
+<td class="p-4 text-on-surface-variant">10:00 AM</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                            Confirmed
+                                        </span>
+</td>
+</tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+<td class="p-4 text-on-surface font-medium">Sarah Jenkins</td>
+<td class="p-4 text-on-surface-variant">Marcus</td>
+<td class="p-4 text-on-surface-variant">Color &amp; Styling</td>
+<td class="p-4 text-on-surface-variant">11:30 AM</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                            Confirmed
+                                        </span>
+</td>
+</tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+<td class="p-4 text-on-surface font-medium">James Wilson</td>
+<td class="p-4 text-on-surface-variant">Elena</td>
+<td class="p-4 text-on-surface-variant">Hot Towel Shave</td>
+<td class="p-4 text-on-surface-variant">1:15 PM</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-semibold bg-surface-variant text-on-surface-variant border border-outline-variant/30">
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface-variant"></span>
+                                            Pending
+                                        </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Barber Schedule Grid -->
+<section class="glass-panel rounded-xl overflow-hidden p-6">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Staff Availability</h3>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center border border-outline-variant/30 hover:border-primary transition-colors text-on-surface">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center border border-outline-variant/30 hover:border-primary transition-colors text-on-surface">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="space-y-4">
+<!-- Barber Row 1 -->
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-variant overflow-hidden border border-outline-variant/30 shrink-0">
+<img alt="David" class="w-full h-full object-cover" data-alt="A portrait of a male barber looking serious and professional. The background is a dark, moody salon environment. The lighting emphasizes the texture of his hair and the sharp lines of his own grooming." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXePoVBdG-BVvRcuDNdaHsj31lxvLCjOu233ACF5de2UiJA4yG6ocIpAGsLPijWoR6WqX0vQVsW1EgAGZ3PO5epXFk3oPGwdUW_-bjJK993PF83jIReT4984CWUMe3ctvMDQIAS5J9iQ7ZFg4jSirHghLuZOn9FOppasvozfgTT19YIAWAtnw2Wwkb4nwIgWu3pCVFAg1Jvq-JJ8qaBQpH9SQYfh-DQsaQa7eieBNkgEZN3aqK0j7fUViAvOv--Wj7fN4C7mi5idfB"/>
+</div>
+<div class="flex-1 grid grid-cols-8 gap-1 h-10">
+<div class="col-span-2 bg-primary/20 border border-primary/30 rounded flex items-center justify-center">
+<span class="font-caption text-caption text-primary">Booked</span>
+</div>
+<div class="col-span-1 bg-surface-variant/30 border border-white/5 rounded"></div>
+<div class="col-span-3 bg-primary/20 border border-primary/30 rounded flex items-center justify-center">
+<span class="font-caption text-caption text-primary">Booked</span>
+</div>
+<div class="col-span-2 bg-surface-variant/30 border border-white/5 rounded"></div>
+</div>
+</div>
+<!-- Barber Row 2 -->
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-variant overflow-hidden border border-outline-variant/30 shrink-0">
+<img alt="Elena" class="w-full h-full object-cover" data-alt="A portrait of a female barber/stylist in a high-end salon. She has a confident expression. The aesthetic is dark and luxurious, consistent with the overall cinematic style of the UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW8qJh2TXWbThd7E5lnlgq4L9-1RAA28Qz7UvHnAZCy1v2vA5Qt2oLweD3czcqP9Ep_J4anXYh6EVGO9XWjd1sqLlvHn419GiiMyG5s4Sku0XX_iSV1OWPAwhmGNGV-m2xZ6AxNco9Agvuk4vDY3SIadcOJO-jaj5R8CF8Pj9ooE6lkTZ77be0dnLmkByIqwcSNxjXEW69fzPDxxyHdC02Rx6bSz3rrCAhArhtjC5vEEAjhoMaw2wgPK9jiFu5BjQ0Pu7xmyGKS61i"/>
+</div>
+<div class="flex-1 grid grid-cols-8 gap-1 h-10">
+<div class="col-span-1 bg-surface-variant/30 border border-white/5 rounded"></div>
+<div class="col-span-4 bg-primary/20 border border-primary/30 rounded flex items-center justify-center">
+<span class="font-caption text-caption text-primary">Booked</span>
+</div>
+<div class="col-span-3 bg-surface-variant/30 border border-white/5 rounded"></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Charts & Coupons -->
+<div class="space-y-8">
+<!-- Peak Hours Chart (Visual Representation) -->
+<section class="glass-panel p-6 rounded-xl">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6">Peak Hours</h3>
+<div class="h-48 flex items-end gap-2 border-b border-white/10 pb-2">
+<!-- Bars -->
+<div class="flex-1 bg-surface-variant/50 rounded-t h-[30%] hover:bg-primary/40 transition-colors relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-surface px-2 py-1 rounded text-xs text-on-surface opacity-0 group-hover:opacity-100 border border-white/10">9A</div>
+</div>
+<div class="flex-1 bg-surface-variant/50 rounded-t h-[50%] hover:bg-primary/40 transition-colors"></div>
+<div class="flex-1 bg-primary/80 rounded-t h-[80%] hover:bg-primary transition-colors relative">
+<div class="absolute -top-2 left-1/2 -translate-x-1/2 w-1 h-1 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.8)]"></div>
+</div>
+<div class="flex-1 bg-primary rounded-t h-[100%] shadow-[0_0_20px_rgba(212,175,55,0.3)] relative"></div>
+<div class="flex-1 bg-primary/80 rounded-t h-[75%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-surface-variant/50 rounded-t h-[60%] hover:bg-primary/40 transition-colors"></div>
+<div class="flex-1 bg-surface-variant/50 rounded-t h-[40%] hover:bg-primary/40 transition-colors"></div>
+</div>
+<div class="flex justify-between mt-2 font-caption text-caption text-on-surface-variant">
+<span>9AM</span>
+<span>12PM</span>
+<span>6PM</span>
+</div>
+</section>
+<!-- Coupon Management UI -->
+<section class="glass-panel p-6 rounded-xl">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Active Promos</h3>
+<button class="w-8 h-8 rounded-full border border-primary text-primary flex items-center justify-center hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="space-y-4">
+<!-- Promo Item -->
+<div class="bg-surface/50 border border-white/5 rounded-lg p-4 flex justify-between items-center group hover:border-primary/50 transition-colors">
+<div>
+<p class="font-body-md text-body-md font-semibold text-primary font-mono tracking-wider">ROYAL20</p>
+<p class="font-caption text-caption text-on-surface-variant">20% off Executive Cut</p>
+</div>
+<div class="text-right">
+<p class="font-body-md text-body-md text-on-surface">45 Uses</p>
+<p class="font-caption text-caption text-on-surface-variant">Expires in 2d</p>
+</div>
+</div>
+<!-- Promo Item -->
+<div class="bg-surface/50 border border-white/5 rounded-lg p-4 flex justify-between items-center group hover:border-primary/50 transition-colors">
+<div>
+<p class="font-body-md text-body-md font-semibold text-primary font-mono tracking-wider">WELCOME10</p>
+<p class="font-caption text-caption text-on-surface-variant">10% off First Visit</p>
+</div>
+<div class="text-right">
+<p class="font-body-md text-body-md text-on-surface">112 Uses</p>
+<p class="font-caption text-caption text-on-surface-variant">No expiry</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body></html>

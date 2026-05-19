@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RoyalCuts | Premium Grooming Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "inverse-surface": "#e3e2e7",
+                "secondary-container": "#4a4949",
+                "inverse-primary": "#735c00",
+                "surface-container-lowest": "#0d0e12",
+                "on-secondary-container": "#bab8b7",
+                "inverse-on-surface": "#2f3034",
+                "on-surface-variant": "#d0c5af",
+                "outline": "#99907c",
+                "secondary-fixed": "#e5e2e1",
+                "on-tertiary-container": "#454544",
+                "on-error-container": "#ffdad6",
+                "surface": "#121317",
+                "surface-bright": "#38393d",
+                "on-background": "#e3e2e7",
+                "on-tertiary": "#313030",
+                "surface-container-low": "#1a1b1f",
+                "surface-tint": "#e9c349",
+                "on-tertiary-fixed-variant": "#474746",
+                "on-secondary": "#313030",
+                "background": "#121317",
+                "on-tertiary-fixed": "#1b1b1b",
+                "on-primary-fixed": "#241a00",
+                "on-error": "#690005",
+                "surface-container": "#1e1f23",
+                "outline-variant": "#4d4635",
+                "on-primary-fixed-variant": "#574500",
+                "primary-fixed-dim": "#e9c349",
+                "on-secondary-fixed-variant": "#474646",
+                "surface-container-highest": "#343539",
+                "tertiary-fixed-dim": "#c8c6c5",
+                "surface-container-high": "#292a2e",
+                "on-primary-container": "#554300",
+                "tertiary": "#d0cdcd",
+                "error-container": "#93000a",
+                "secondary": "#c9c6c5",
+                "on-primary": "#3c2f00",
+                "secondary-fixed-dim": "#c9c6c5",
+                "on-surface": "#e3e2e7",
+                "primary-fixed": "#ffe088",
+                "surface-dim": "#121317",
+                "error": "#ffb4ab",
+                "tertiary-container": "#b4b2b2",
+                "surface-variant": "#343539",
+                "on-secondary-fixed": "#1c1b1b",
+                "tertiary-fixed": "#e5e2e1",
+                "primary": "#f2ca50",
+                "primary-container": "#d4af37"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "unit": "8px",
+                "container-max-width": "1280px",
+                "margin-mobile": "16px",
+                "margin-desktop": "64px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "display-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "label-md": [
+                        "Montserrat"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ],
+                "body-lg": [
+                        "Montserrat"
+                ],
+                "headline-md": [
+                        "Playfair Display"
+                ],
+                "headline-lg": [
+                        "Playfair Display"
+                ],
+                "body-md": [
+                        "Montserrat"
+                ],
+                "caption": [
+                        "Montserrat"
+                ]
+        },
+        "fontSize": {
+                "display-lg-mobile": [
+                        "40px",
+                        {
+                                "lineHeight": "48px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg": [
+                        "64px",
+                        {
+                                "lineHeight": "72px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "caption": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "fontWeight": "500"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+    .glass-effect {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        background: rgba(28, 28, 28, 0.4);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .btn-gold-gradient {
+        background: linear-gradient(to right, #D4AF37, #F2D388);
+    }
+    .btn-gold-gradient:hover {
+        background: linear-gradient(to right, #F2D388, #D4AF37);
+    }
+    .text-glow {
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    }
+</style>
+</head>
+<body class="bg-background text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-lg dark:bg-surface/80 border-b border-outline-variant/20 shadow-2xl hidden md:block">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max-width mx-auto">
+<a class="font-display-lg text-headline-md text-primary tracking-tighter" href="#">RoyalCuts</a>
+<ul class="flex space-x-8">
+<li><a class="font-label-md text-label-md uppercase tracking-widest text-primary border-b-2 border-primary pb-1" href="#">Services</a></li>
+<li><a class="font-label-md text-label-md uppercase tracking-widest text-on-surface/80 hover:text-primary transition-colors" href="#">Barbers</a></li>
+<li><a class="font-label-md text-label-md uppercase tracking-widest text-on-surface/80 hover:text-primary transition-colors" href="#">Booking</a></li>
+<li><a class="font-label-md text-label-md uppercase tracking-widest text-on-surface/80 hover:text-primary transition-colors" href="#">Dashboard</a></li>
+</ul>
+<div class="flex items-center space-x-6">
+<button class="font-label-md text-label-md text-on-surface hover:text-primary transition-colors">Login</button>
+<button class="btn-gold-gradient text-[#0A0A0A] font-label-md text-label-md px-6 py-3 rounded-DEFAULT hover:bg-white/5 transition-all duration-300">Book Now</button>
+</div>
+</div>
+</nav>
+<!-- Mobile Navigation Trigger (BottomNavBar context for later, hidden on desktop) -->
+<nav class="fixed bottom-0 w-full rounded-t-xl z-50 bg-surface/90 backdrop-blur-xl dark:bg-surface/90 border-t border-white/5 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] flex justify-around items-center h-16 px-margin-mobile md:hidden">
+<a class="flex flex-col items-center justify-center text-primary font-bold active:bg-white/5 Active: scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-caption text-caption uppercase mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-white/5" href="#">
+<span class="material-symbols-outlined">content_cut</span>
+<span class="font-caption text-caption uppercase mt-1">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-white/5" href="#">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-caption text-caption uppercase mt-1">My Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-white/5" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-caption text-caption uppercase mt-1">Profile</span>
+</a>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center pt-20">
+<div class="absolute inset-0 z-0">
+<img alt="Cinematic luxury barber shop interior" class="w-full h-full object-cover opacity-40" data-alt="A cinematic, high-contrast image of a luxury barber shop interior. Deep obsidian surfaces and rich mahogany tones are illuminated by warm, luminous metallic accents and frosted glass textures. The lighting is moody and dramatic, focusing on a vintage leather barber chair with glowing gold highlights. The atmosphere is undeniably premium, quiet, and tailored, embodying a high-end atelier aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPogDOQaWlMZ3RxQ5XSgAurML0bDWiiOIYqOgDG3fTqVf1fgJ6XNx8YAFRwevWCM-evQ_lNapfKguZa5DM5g26rL2CGXgQ6Rg3O39S0955YZQ8mvJw5SQc9vb408NmTIu7zjsYEBGKIAo5Z7DeMm1infPAEvgTjpgoAfhoo4RurdYQPynWM3I6J0iYsJQC77q-krWWub8hEVl4FY-dfkL0-fw1oJ4YMznmcgyR1m4P25DKNnXaFacpSArVqZy-zEMRARU8q5MHTHqx"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto flex flex-col items-center">
+<span class="font-label-md text-label-md text-primary tracking-[0.2em] uppercase mb-4">Welcome to RoyalCuts</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6 max-w-4xl text-glow">
+            Premium Grooming Experience
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-10">
+            Where tradition meets modern luxury. Book your seat in the chair of kings. Experience meticulous detail and cinematic elegance.
+        </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<button class="btn-gold-gradient text-[#0A0A0A] font-label-md text-label-md px-10 py-4 rounded-DEFAULT shadow-[0_0_40px_rgba(212,175,55,0.3)] transition-all">
+                Book Appointment
+            </button>
+<button class="bg-transparent border border-primary text-primary hover:bg-primary/10 font-label-md text-label-md px-10 py-4 rounded-DEFAULT transition-all">
+                Explore Styles
+            </button>
+</div>
+</div>
+</section>
+<!-- Trending Showcase -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-low relative">
+<div class="max-w-container-max-width mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Trending Styles</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Curated looks for the modern gentleman.</p>
+</div>
+<a class="hidden md:flex items-center text-primary font-label-md text-label-md hover:underline" href="#">
+                View Gallery <span class="material-symbols-outlined ml-2">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Large Feature Image -->
+<div class="md:col-span-8 relative h-[500px] rounded-lg overflow-hidden group">
+<img alt="Classic fade haircut" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A striking portrait of a male model showing off a meticulously detailed classic fade haircut. The setting is a high-end atelier with deep black backgrounds. Luminous metallic light highlights the sharp lines of the haircut and the model's structured jawline. The visual style is high-contrast minimalism, evoking cinematic elegance and exclusivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4ggbxGwdeEvhGryvsA7S2Cd3xVXtcyf97NKBOqEundL1lUxmb9M5wPFzQ9lZLa9pG-AX4T2o8-f1JOfeEasSmoh9gbgNQOemI4nSgqlyv_OQkz9Kw6R62j-3Z3KpoIaKkJcOQuzSvGK019XNL2en27MzM9_LHRlbw6r11XzMZKSbC5MeMjD-OEHE3OV66u-dSJEqHfjzGZUaWVak18NaPX-u_HV9sSZc712m99d6Ds1_rp6yM0aevzCgRmKEqVK2zHww2THlLeACV"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<span class="inline-block px-3 py-1 bg-primary/20 text-primary border border-primary/30 rounded-full font-caption text-caption mb-3 backdrop-blur-sm">Most Requested</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">The Executive Fade</h3>
+</div>
+</div>
+<!-- Side Stack -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<div class="relative h-[238px] rounded-lg overflow-hidden group">
+<img alt="Beard trim and styling" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up shot of a professional barber carefully trimming a client's beard. The image features deep obsidian shadows contrasting with the luminous metallic sheen of the barber's scissors. Frosted glass elements subtly reflect in the background. The mood is quiet, confident, and undeniably premium, focusing on the tactile luxury of the grooming experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACssqmDu9VEER36LBxBrXcagzJR3BdRqc4vvEr86sH_0JxAAYCIStwREehXDJKFxtO2j64MXQOWfNj-HuWvHOh5WHsa7_HG9LehZBWSF_d0eqAvJOjPqmpXSL85YCCaDUJ4S0tk8uxgSuLhXarQGGxa_moWIXSKW8KSLUMtcigFk9HQHo2N3VxsIlNNMm78GQGC8Rf-aZ_iRDGMDAdhrNU3E_rq4_bXqgH37CgdEw1HF1s6-AR1Pf8WlWtAT5Tu5XoPUGNzLT0fl8R"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface">Precision Beard Sculpting</h3>
+</div>
+</div>
+<div class="relative h-[238px] rounded-lg overflow-hidden group bg-surface-container flex items-center justify-center p-8 border border-white/5">
+<div class="text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4 block">diamond</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Bespoke Consultations</h3>
+<p class="font-caption text-caption text-on-surface-variant">Tailored advice for your unique profile.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials (Glassmorphism) -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop relative overflow-hidden">
+<!-- Abstract Background Elements -->
+<div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-primary/10 to-transparent opacity-30 rounded-bl-full pointer-events-none"></div>
+<div class="max-w-container-max-width mx-auto relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Voices of the Circle</h2>
+<div class="w-16 h-1 bg-primary mx-auto mt-6"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Glass Card 1 -->
+<div class="glass-effect rounded-xl p-8 relative">
+<span class="material-symbols-outlined absolute top-6 right-6 text-primary/30 text-5xl">format_quote</span>
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                    "An experience unlike any other. The attention to detail is truly meticulous. It feels less like an appointment and more like a retreat."
+                </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-bright border border-primary/20 overflow-hidden flex-shrink-0">
+<img alt="Customer portrait" class="w-full h-full object-cover" data-alt="A minimalist, high-contrast portrait of a male customer looking subtly confident. The lighting is cinematic, casting deep shadows against an obsidian surface. A faint golden glow highlights his profile, maintaining the visual language of tactile luxury and unhurried sophistication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOOasVOe3BokRG3Z2TK6wNmhfa6axY3Uw6_OfTeBPWcz1Id5xXBQyGQR4s3HXmhe5l7Kws_7xkwb7UQywPfN_v8jX0D5B4IKhISPZxhyhD2jU98bqb0ABLmKnfg3XRwESaTaGZSbxfuUC2tGGYPQPdGW3gw4lUneW9ngfK_UQw_VSsTvFmb3ZP3QIpEaSGpQe2uFyPSYYKlrrrpNbZn6jUGNJzsfpayroccWniTnW2OdFhASZyN0aJOnTny7zo89krJCLlAcBPOdHD"/>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Jameson W.</h4>
+<span class="font-caption text-caption text-on-surface-variant">VIP Member</span>
+</div>
+</div>
+</div>
+<!-- Glass Card 2 -->
+<div class="glass-effect rounded-xl p-8 relative md:-translate-y-4">
+<span class="material-symbols-outlined absolute top-6 right-6 text-primary/30 text-5xl">format_quote</span>
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                    "Stepping into RoyalCuts feels like stepping into a high-end atelier. The atmosphere is quiet, confident, and the results are consistently flawless."
+                </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-bright border border-primary/20 overflow-hidden flex-shrink-0">
+<img alt="Customer portrait" class="w-full h-full object-cover" data-alt="A minimalist, high-contrast portrait of a male customer looking subtly confident. The lighting is cinematic, casting deep shadows against an obsidian surface. A faint golden glow highlights his profile, maintaining the visual language of tactile luxury and unhurried sophistication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn2txoHfsbvUzrZuRP4Y-weN5mvwHyAogrHj2TmF2Bt0swtKB91z-5TfkLARpKLI0qXMNXodclC0UL6BgwHgzGeKzxxXLBKRXTrf50WhXXDk9cfSiQYnK8ylXeLOdzW4WfMkykK5wTK_9NmuJk-IMVVMZHrC3tBS97DOGLdPJHp9Fe7UMqjQXMRXwL8LEmOgAfnYVgmFBecyUfqIJ2RnpYD_5gxZxS7UHjv44YuGeSwoMgRD4YnvCRGQKYBXotO1km0HEIbUzYywEI"/>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Arthur P.</h4>
+<span class="font-caption text-caption text-on-surface-variant">Gold Member</span>
+</div>
+</div>
+</div>
+<!-- Glass Card 3 -->
+<div class="glass-effect rounded-xl p-8 relative">
+<span class="material-symbols-outlined absolute top-6 right-6 text-primary/30 text-5xl">format_quote</span>
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                    "The hot towel shave is a revelation. I always leave feeling completely refreshed and looking sharp. Uncompromising quality."
+                </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-bright border border-primary/20 overflow-hidden flex-shrink-0">
+<img alt="Customer portrait" class="w-full h-full object-cover" data-alt="A minimalist, high-contrast portrait of a male customer looking subtly confident. The lighting is cinematic, casting deep shadows against an obsidian surface. A faint golden glow highlights his profile, maintaining the visual language of tactile luxury and unhurried sophistication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB7dXNUcj79A16jLX_DHzo9S6I3nfa3E6Br2Ke1hyQqTe7VbK0cvqYcJ-on7Q-w-A-m_VnNUp91mV3oSLjD4xK2Zdo6nql-kCjM4UQBAoCHIzBmZ35jvJ6IuVTDtDicucPh5Umqrlo_ygO4K0GfIMZ3GCR01ApoGmS6xGSbrXafah_ewlUPVz9uny-DTfkTiAqrObUKU66kIt6Mr_0z-G4CgTrCK_cr7UOR5twLbgP2ZSbh37TFn7aUXK9Q_mz1-BOgUZ_ULjE1j3q"/>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Michael T.</h4>
+<span class="font-caption text-caption text-on-surface-variant">Silver Member</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-16 border-t border-outline-variant/10 pb-32 md:pb-16">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max-width mx-auto gap-8">
+<div class="text-center md:text-left">
+<span class="font-display-lg text-headline-md text-primary block mb-2">RoyalCuts</span>
+<span class="font-body-md text-body-md text-on-surface-variant">© 2024 RoyalCuts Luxury Grooming. All Rights Reserved.</span>
+</div>
+<ul class="flex flex-wrap justify-center gap-6">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors" href="#">Contact Us</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+</footer>
+</body></html>

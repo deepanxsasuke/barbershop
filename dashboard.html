@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RoyalCuts User Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Glassmorphism utility */
+        .glass-panel {
+            background-color: rgba(28, 28, 28, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top-color: rgba(255, 255, 255, 0.2);
+            border-left-color: rgba(255, 255, 255, 0.2);
+        }
+        .glass-card {
+            background-color: rgba(28, 28, 28, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #D4AF37 0%, #F2D388 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .bg-gradient-gold {
+            background: linear-gradient(135deg, #D4AF37 0%, #F2D388 100%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#e3e2e7",
+                        "secondary-container": "#4a4949",
+                        "inverse-primary": "#735c00",
+                        "surface-container-lowest": "#0d0e12",
+                        "on-secondary-container": "#bab8b7",
+                        "inverse-on-surface": "#2f3034",
+                        "on-surface-variant": "#d0c5af",
+                        "outline": "#99907c",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-tertiary-container": "#454544",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#121317",
+                        "surface-bright": "#38393d",
+                        "on-background": "#e3e2e7",
+                        "on-tertiary": "#313030",
+                        "surface-container-low": "#1a1b1f",
+                        "surface-tint": "#e9c349",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-secondary": "#313030",
+                        "background": "#121317",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "on-primary-fixed": "#241a00",
+                        "on-error": "#690005",
+                        "surface-container": "#1e1f23",
+                        "outline-variant": "#4d4635",
+                        "on-primary-fixed-variant": "#574500",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-secondary-fixed-variant": "#474646",
+                        "surface-container-highest": "#343539",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#292a2e",
+                        "on-primary-container": "#554300",
+                        "tertiary": "#d0cdcd",
+                        "error-container": "#93000a",
+                        "secondary": "#c9c6c5",
+                        "on-primary": "#3c2f00",
+                        "secondary-fixed-dim": "#c9c6c5",
+                        "on-surface": "#e3e2e7",
+                        "primary-fixed": "#ffe088",
+                        "surface-dim": "#121317",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#b4b2b2",
+                        "surface-variant": "#343539",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "tertiary-fixed": "#e5e2e1",
+                        "primary": "#f2ca50",
+                        "primary-container": "#d4af37"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-max-width": "1280px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Playfair Display"],
+                        "label-md": ["Montserrat"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Montserrat"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Montserrat"],
+                        "caption": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen selection:bg-primary/30">
+<div class="flex min-h-screen relative">
+<!-- Background Pattern -->
+<div class="fixed inset-0 z-0 pointer-events-none opacity-5" style="background-image: radial-gradient(circle at 2px 2px, #fff 1px, transparent 0); background-size: 32px 32px;"></div>
+<!-- SideNavBar (Desktop) -->
+<aside class="hidden md:flex flex-col bg-surface-container dark:bg-surface-container h-screen w-64 fixed left-0 top-0 border-r border-outline-variant/10 shadow-xl p-unit gap-4 z-40">
+<div class="px-4 pt-8 pb-4 mb-4">
+<h1 class="font-display-lg text-headline-sm text-primary text-gradient-gold text-2xl font-bold tracking-tighter">Admin Portal</h1>
+<p class="font-caption text-caption text-on-surface-variant mt-1">RoyalCuts Management</p>
+</div>
+<nav class="flex-1 space-y-2 px-2">
+<a class="flex items-center gap-4 px-4 py-3 bg-primary-container text-on-primary-container rounded-lg font-bold transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-md text-label-md">Overview</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-secondary-container/50 rounded-lg transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">calendar_month</span>
+<span class="font-label-md text-label-md group-hover:text-primary transition-colors">Schedule</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-secondary-container/50 rounded-lg transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">group</span>
+<span class="font-label-md text-label-md group-hover:text-primary transition-colors">Staff</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-secondary-container/50 rounded-lg transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">monitoring</span>
+<span class="font-label-md text-label-md group-hover:text-primary transition-colors">Analytics</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-secondary-container/50 rounded-lg transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">settings</span>
+<span class="font-label-md text-label-md group-hover:text-primary transition-colors">Settings</span>
+</a>
+</nav>
+<div class="p-4 mt-auto">
+<button class="w-full bg-gradient-gold text-[#0A0A0A] font-label-md text-label-md py-3 rounded-lg hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-all duration-300">
+                    New Appointment
+                </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 w-full p-margin-mobile md:p-margin-desktop max-w-container-max-width mx-auto relative z-10 pb-24 md:pb-margin-desktop">
+<!-- Page Header -->
+<header class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Welcome Back, Alexander</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Your grooming journey is ready for you.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary border-opacity-50 relative">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A sophisticated portrait of a well-groomed man with a sharp haircut and styled beard, wearing a dark suit. The background is a moody, blurred luxury interior. The lighting is dramatic, highlighting the sharp lines of his haircut and the texture of his suit. The overall aesthetic aligns with a high-end, dark-mode luxury grooming brand, featuring deep blacks and a subtle cinematic glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp3BwplxeuDQJNCaFH_64SrEUo_QDuE7yyMeaxrNLbRbul3fJukz5PsOqqjHirRorM-Q7gYDIuodR1v1BFac_4YYmlQ5RTcoEocjZKzD9pLeN08FcuENR7zy5OGSyBJKBV_Go5vSVBP7YIp2J97la4FmU_f0cV_j7npLbFY6wltDPQU6hXXUexPWWbVY7W-EFxkObtQ9yfKoVUa8XqLkbdHhabYYDI1bx4C52u-Lu5QRQYs99LDMyybCGznPDqP_1ViGkr3z7a9rva"/>
+</div>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Upcoming Appointments (Hero Card) - Spans 8 cols -->
+<div class="md:col-span-8 glass-panel rounded-2xl p-8 relative overflow-hidden flex flex-col justify-between min-h-[320px]">
+<!-- Background Image Overlay -->
+<div class="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay" data-alt="Close up shot of professional barber tools including shiny clippers and scissors resting on a dark, textured leather surface. The scene is illuminated by dramatic, warm spotlighting that reflects off the metallic tools. The mood is highly professional and luxurious, evoking a premium atelier setting. The color palette is dominated by rich, deep shadows and golden-amber highlights, perfectly matching the dark-mode aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAC4NO5YGdEBLvJG8o7qsYd2u6o-Hk41nLhZZKvC2hprYpM8wPWOXAO5nCHjnxyLNOKgPLSw24Q5_VyhAmPl8ByH5SkoAHTstd-RHO8MCGxBzd0czJL4KO8d3ODvAnJAcd1Na4-NyP8XmsaGOooR4526Q8AgJIC2yWCH4gj5xxaXE9ou6MB51Y7dCX1KNQ4P8u2peM7E5sUFBpKhkg73zHtUlT8YRZiE9yj49TIw_iEuEzhZkaDlc3ghHJTN6d0kNsHkOXq3CSv4BN_');"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-6">
+<h3 class="font-headline-md text-headline-md text-primary">Next Appointment</h3>
+<span class="bg-primary/10 text-primary font-caption text-caption px-3 py-1 rounded-full border border-primary/30 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                                In 2 Days
+                            </span>
+</div>
+<div class="flex flex-col gap-2 mb-8">
+<h4 class="font-display-lg-mobile text-display-lg-mobile text-white leading-tight">Executive Cut &amp; Hot Towel Shave</h4>
+<p class="font-body-lg text-body-lg text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">event</span> Thursday, Oct 26 at 4:30 PM
+                            </p>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">person</span> with Master Barber James
+                            </p>
+</div>
+</div>
+<div class="relative z-10 flex flex-wrap gap-4 mt-auto">
+<button class="bg-gradient-gold text-[#0A0A0A] font-label-md text-label-md px-8 py-3 rounded-lg hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-all duration-300">
+                            Check In
+                        </button>
+<button class="bg-transparent border border-outline text-on-surface font-label-md text-label-md px-8 py-3 rounded-lg hover:border-primary hover:text-primary transition-all duration-300">
+                            Reschedule
+                        </button>
+</div>
+</div>
+<!-- Loyalty Points - Spans 4 cols -->
+<div class="md:col-span-4 glass-card rounded-2xl p-6 flex flex-col items-center justify-center text-center relative overflow-hidden">
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/20 rounded-full blur-3xl"></div>
+<span class="material-symbols-outlined text-primary mb-4" style="font-size: 48px; font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Royal Rewards</h3>
+<div class="font-display-lg text-display-lg text-gradient-gold mb-4">2,450</div>
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-widest mb-6">Current Points</p>
+<div class="w-full bg-[#141414] rounded-full h-2 mb-2 border border-white/5">
+<div class="bg-gradient-gold h-2 rounded-full" style="width: 80%"></div>
+</div>
+<p class="font-caption text-caption text-on-surface-variant flex justify-between w-full">
+<span>Gold Tier</span>
+<span>550 to Platinum</span>
+</p>
+</div>
+<!-- Booking History - Spans 6 cols -->
+<div class="md:col-span-6 bg-[#1C1C1C] rounded-2xl p-6 border border-white/10">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Recent Visits</h3>
+<a class="font-label-md text-label-md text-primary hover:underline" href="#">View All</a>
+</div>
+<div class="space-y-0">
+<!-- History Item -->
+<div class="flex items-center justify-between py-4 border-b border-white/5 last:border-0 group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center border border-white/5 group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">content_cut</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Classic Haircut</p>
+<p class="font-caption text-caption text-on-surface-variant">Oct 12, 2023</p>
+</div>
+</div>
+<span class="text-primary font-caption text-caption border border-primary/20 px-2 py-1 rounded">Completed</span>
+</div>
+<!-- History Item -->
+<div class="flex items-center justify-between py-4 border-b border-white/5 last:border-0 group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center border border-white/5 group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">face</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Beard Trim &amp; Shape</p>
+<p class="font-caption text-caption text-on-surface-variant">Sep 28, 2023</p>
+</div>
+</div>
+<span class="text-primary font-caption text-caption border border-primary/20 px-2 py-1 rounded">Completed</span>
+</div>
+</div>
+</div>
+<!-- Favorite Barber & Quick Actions - Spans 6 cols -->
+<div class="md:col-span-6 grid grid-rows-2 gap-6">
+<!-- Favorite Barber -->
+<div class="bg-[#1C1C1C] rounded-2xl p-6 border border-white/10 flex items-center gap-6">
+<div class="w-20 h-20 rounded-full overflow-hidden border border-primary/30 shrink-0">
+<img alt="Master Barber James" class="w-full h-full object-cover" data-alt="Portrait of a sophisticated master barber looking directly at the camera. He is wearing a dark, stylish apron over a crisp shirt. The background is a dimly lit, high-end barber shop with subtle reflections off mirrors. The lighting is moody and cinematic, emphasizing his professional demeanor and the luxurious, dark-mode aesthetic of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA160darlv775jmmFDSfCRljo1OdfpQay5dPljLgFG_k-FDXSGOwiYIqWLz3Q4QCTVi3ZnC4SZ3HaaovdbUOXoJ-xEw6M384Pl0p23yanxegGCw_GHBB9biuIctk4y8P5wrIReKJx0ngGlFxvCJ_-wT5qrw0bCeBNmDipp_FfFUmPMZxArgVN78cfB_Y4v5kCqblXsnCO_SB_jo8IlmjueW-9SH5LDSUyhWjK8Nb2dEDlaYfquiORjs7txvnYtXuz6HeUu_w5Resc77"/>
+</div>
+<div class="flex-1">
+<p class="font-caption text-caption text-primary uppercase tracking-widest mb-1">Preferred Barber</p>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">James "The Blade"</h4>
+<div class="flex items-center gap-1 text-primary text-sm mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+</div>
+</div>
+<button class="w-12 h-12 rounded-full border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-[#0A0A0A] transition-colors shrink-0">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<!-- Grooming Stats -->
+<div class="bg-[#1C1C1C] rounded-2xl p-6 border border-white/10 grid grid-cols-2 gap-4">
+<div>
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-widest mb-2">Total Visits</p>
+<p class="font-display-lg-mobile text-display-lg-mobile text-on-surface">24</p>
+</div>
+<div>
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-widest mb-2">Top Service</p>
+<p class="font-body-lg text-body-lg font-semibold text-on-surface">Executive Cut</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden flex justify-around items-center h-16 px-margin-mobile bg-surface/90 backdrop-blur-xl dark:bg-surface/90 fixed bottom-0 w-full rounded-t-xl z-50 border-t border-white/5 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-primary font-bold active:bg-white/5 scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-caption text-caption uppercase mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-white/5" href="#">
+<span class="material-symbols-outlined">content_cut</span>
+<span class="font-caption text-caption uppercase mt-1">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-white/5" href="#">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-caption text-caption uppercase mt-1">My Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-white/5" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-caption text-caption uppercase mt-1">Profile</span>
+</a>
+</nav>
+</body></html>
