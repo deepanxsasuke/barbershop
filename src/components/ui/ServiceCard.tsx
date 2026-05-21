@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Button";
 
 interface ServiceCardProps {
+  id: number;
   title: string;
   price: string;
   duration: string;
@@ -8,7 +9,7 @@ interface ServiceCardProps {
   image: string;
 }
 
-export function ServiceCard({ title, price, duration, description, image }: ServiceCardProps) {
+export function ServiceCard({ id, title, price, duration, description, image }: ServiceCardProps) {
   return (
     <div className="glassmorphism rounded-2xl overflow-hidden flex flex-col group hover:-translate-y-2 hover:shadow-[0_16px_48px_rgba(0,0,0,0.6),0_0_24px_rgba(212,175,55,0.12)] transition-all duration-300">
       {/* Image */}
@@ -35,7 +36,7 @@ export function ServiceCard({ title, price, duration, description, image }: Serv
         <p className="font-montserrat text-sm text-white/60 flex-grow mb-6 leading-relaxed">
           {description}
         </p>
-        <Button href="/book" size="sm" className="w-full !py-3 uppercase tracking-widest text-xs">
+        <Button href={`/book?serviceId=${id}`} size="sm" className="w-full !py-3 uppercase tracking-widest text-xs">
           Book Now
         </Button>
       </div>
