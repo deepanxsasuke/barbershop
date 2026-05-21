@@ -46,7 +46,32 @@ const timeSlots = [
 export default function BookPage() {
   const [selectedBarber, setSelectedBarber] = useState(0);
   const [selectedTime, setSelectedTime] = useState<string | null>("01:30 PM");
-  const [selectedDay, setSelectedDay] = useState<number>(13);
+  
+  const [currentMonth, setCurrentMonth] = useState<Date>(new Date());
+  const [selectedDate, setSelectedDate] = useState<Date>(new Date());
+
+  const year = currentMonth.getFullYear();
+  const month = currentMonth.getMonth();
+  
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const firstDay = new Date(year, month, 1).getDay();
+
+  const monthNames = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+
+  const prevMonth = () => {
+    setCurrentMonth(new Date(year, month - 1, 1));
+  };
+
+  const nextMonth = () => {
+    setCurrentMonth(new Date(year, month + 1, 1));
+  };
+
+  const handleDayClick = (day: number) => {
+    setSelectedDate(new Date(year, month, day));
+  };
 
   return (
     <div className="flex-grow flex flex-col md:flex-row gap-8 px-6 max-w-[1280px] mx-auto w-full py-8 md:py-16">
@@ -186,13 +211,13 @@ export default function BookPage() {
           <div className="mb-8 relative z-10">
             <div className="flex justify-between items-center mb-6">
               <h3 className="font-playfair text-xl font-bold text-white">
-                November 2024
+                {monthNames[month]} {year}
               </h3>
               <div className="flex gap-2">
-                <button className="w-10 h-10 rounded-full bg-[#1e1f23] flex items-center justify-center text-white hover:text-primary hover:bg-white/5 transition-colors border border-white/10">
+                <button onClick={prevMonth} className="w-10 h-10 rounded-full bg-[#1e1f23] flex items-center justify-center text-white hover:text-primary hover:bg-white/5 transition-colors border border-white/10">
                   <span className="material-symbols-outlined">chevron_left</span>
                 </button>
-                <button className="w-10 h-10 rounded-full bg-[#1e1f23] flex items-center justify-center text-white hover:text-primary hover:bg-white/5 transition-colors border border-white/10">
+                <button onClick={nextMonth} className="w-10 h-10 rounded-full bg-[#1e1f23] flex items-center justify-center text-white hover:text-primary hover:bg-white/5 transition-colors border border-white/10">
                   <span className="material-symbols-outlined">chevron_right</span>
                 </button>
               </div>
@@ -207,36 +232,34 @@ export default function BookPage() {
             </div>
 
             <div className="grid grid-cols-7 gap-2">
-              <div className="aspect-square"></div>
-              <div className="aspect-square"></div>
-              <div className="aspect-square"></div>
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18].map(
-                (day) => {
-                  const isSelected = selectedDay === day;
-                  const isToday = day === 9;
-                  let style =
-                    "text-white/60 hover:text-white hover:bg-white/5 transition-colors cursor-pointer";
-                  if (isSelected) {
-                    style =
-                      "bg-primary text-[#0a0a0a] font-bold shadow-[0_0_15px_rgba(212,175,55,0.4)] cursor-pointer";
-                  } else if (isToday) {
-                    style = "text-primary border border-primary relative cursor-pointer";
-                  }
+              {Array.from({ length: firstDay }).map((_, index) => (
+                <div key={`empty-${index}`} className="aspect-square"></div>
+              ))}
+              {Array.from({ length: daysInMonth }).map((_, index) => {
+                const day = index + 1;
+                const isSelected = 
+                  selectedDate.getDate() === day && 
+                  selectedDate.getMonth() === month && 
+                  selectedDate.getFullYear() === year;
 
-                  return (
-                    <button
-                      key={day}
-                      onClick={() => setSelectedDay(day)}
-                      className={`aspect-square rounded-full flex items-center justify-center font-montserrat text-sm ${style}`}
-                    >
-                      {day}
-                      {isToday && !isSelected && (
-                        <div className="absolute -bottom-1 w-1 h-1 rounded-full bg-primary"></div>
-                      )}
-                    </button>
-                  );
+                let style =
+                  "text-white/60 hover:text-white hover:bg-white/5 transition-colors cursor-pointer";
+                
+                if (isSelected) {
+                  style =
+                    "bg-primary text-[#0a0a0a] font-bold shadow-[0_0_15px_rgba(212,175,55,0.4)] cursor-pointer";
                 }
-              )}
+
+                return (
+                  <button
+                    key={day}
+                    onClick={() => handleDayClick(day)}
+                    className={`aspect-square rounded-full flex items-center justify-center font-montserrat text-sm ${style}`}
+                  >
+                    {day}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
