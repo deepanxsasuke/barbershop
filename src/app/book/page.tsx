@@ -1,10 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { useState, useMemo, Suspense } from "react";
+import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/Button";
-
+import { services, saveAppointment } from "@/lib/data";
 const barbers = [
   {
     name: "Marcus Vance",
@@ -45,7 +44,6 @@ const timeSlots = [
   "05:00 PM",
 ];
 
-export default function BookPage() {
 function BookContent() {
   const searchParams = useSearchParams();
   const serviceId = Number(searchParams.get("serviceId") ?? 0);
@@ -322,3 +320,4 @@ export default function BookPage() {
     </Suspense>
   );
 }
+
