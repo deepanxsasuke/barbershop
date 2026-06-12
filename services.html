@@ -205,7 +205,7 @@
 <a class="font-label-md text-label-md uppercase tracking-widest text-primary border-b-2 border-primary pb-1 hover:bg-white/5 transition-all duration-300 Active: scale-95 transition-transform" href="#">Services</a>
 <a class="font-label-md text-label-md uppercase tracking-widest text-on-surface/80 hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300" href="#">Barbers</a>
 <a class="font-label-md text-label-md uppercase tracking-widest text-on-surface/80 hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300" href="#">Booking</a>
-<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface/80 hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300" href="#">Dashboard</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface/80 hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300" href="#contact">Contact</a>
 </div>
 <div class="flex gap-4">
 <button class="font-label-md text-label-md px-6 py-2 border border-primary text-primary rounded hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all">Login</button>
@@ -226,9 +226,9 @@
 <span class="material-symbols-outlined mb-1">event_note</span>
             My Bookings
         </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant font-caption text-caption uppercase active:bg-white/5" href="#">
-<span class="material-symbols-outlined mb-1">person</span>
-            Profile
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-caption text-caption uppercase active:bg-white/5" href="#contact">
+<span class="material-symbols-outlined mb-1">call</span>
+            Contact
         </a>
 </nav>
 <!-- Main Content -->
@@ -355,18 +355,63 @@
 </div>
 </main>
 <!-- Footer -->
-<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-16 border-t border-outline-variant/10 flat no shadows mt-auto">
-<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max-width mx-auto gap-8">
-<div class="font-display-lg text-headline-md text-primary">RoyalCuts</div>
-<div class="flex flex-wrap justify-center gap-6">
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors transition-opacity duration-300" href="#">Privacy Policy</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors transition-opacity duration-300" href="#">Terms of Service</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors transition-opacity duration-300" href="#">Contact Us</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors transition-opacity duration-300" href="#">Careers</a>
-</div>
-<div class="font-body-md text-body-md text-on-surface-variant text-center md:text-right">
-                © 2024 RoyalCuts Luxury Grooming. All Rights Reserved.
-            </div>
-</div>
+<footer id="contact" class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-16 border-t border-outline-variant/10 pb-32 md:pb-8 mt-auto">
+  <div class="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-primary text-2xl">content_cut</span>
+          <span class="font-display-lg text-3xl font-bold text-primary">RoyalCuts</span>
+        </div>
+        <p class="font-body-md text-sm text-on-surface-variant max-w-sm leading-relaxed">
+          Exclusivity, Meticulous Detail, and Cinematic Elegance. We provide
+          premium grooming services tailored for the individual.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h4 class="font-label-md font-bold text-on-surface mb-6 uppercase tracking-widest text-xs">
+          Navigation
+        </h4>
+        <ul class="space-y-3 font-body-md text-sm text-on-surface-variant">
+          <li><a href="/" class="hover:text-primary transition-colors">Home</a></li>
+          <li><a href="/services" class="hover:text-primary transition-colors">Services</a></li>
+          <li><a href="/book" class="hover:text-primary transition-colors">Book Appointment</a></li>
+          <li><a href="#contact" class="hover:text-primary transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-label-md font-bold text-on-surface mb-6 uppercase tracking-widest text-xs">
+          Contact
+        </h4>
+        <ul class="space-y-4 font-body-md text-sm text-on-surface-variant">
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-primary text-base mt-0.5">location_on</span>
+            <span>123 Luxury Ave, Suite 100<br />New York, NY 10001</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-base">mail</span>
+            info@royalcuts.com
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-base">phone</span>
+            +1 (555) 123-4567
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-outline-variant/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant font-body-md">
+      <span>© 2024 RoyalCuts Luxury Barber. All rights reserved.</span>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </div>
 </footer>
 </body></html>

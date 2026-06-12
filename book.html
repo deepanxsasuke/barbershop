@@ -149,8 +149,7 @@
 <div class="flex items-center gap-8">
 <a class="font-label-md text-label-md uppercase tracking-widest text-on-surface/80 hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300 px-4 py-2 rounded-lg" href="#">Services</a>
 <a class="font-label-md text-label-md uppercase tracking-widest text-primary border-b-2 border-primary pb-1 px-4 py-2" href="#">Barbers</a>
-<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface/80 hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300 px-4 py-2 rounded-lg" href="#">Booking</a>
-<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface/80 hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300 px-4 py-2 rounded-lg" href="#">Dashboard</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface/80 hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300 px-4 py-2 rounded-lg" href="/#contact">Contact</a>
 </div>
 <div class="flex items-center gap-4">
 <button class="font-label-md text-label-md uppercase tracking-widest text-on-surface/80 hover:text-primary px-4 py-2">Login</button>
@@ -252,9 +251,10 @@
 <span class="text-primary">$120</span>
 </div>
 </div>
-<button class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md uppercase flex items-center gap-1">
+</div>
+<a href="services.html" class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md uppercase flex items-center gap-1">
                         Edit Service <span class="material-symbols-outlined text-sm">edit</span>
-</button>
+</a>
 </div>
 <!-- Calendar Widget -->
 <div class="mb-8">
@@ -280,7 +280,7 @@
 <div class="font-caption text-caption text-center text-on-surface-variant py-2 uppercase">Sat</div>
 </div>
 <!-- Dates Grid -->
-<div class="grid grid-cols-7 gap-2">
+<div id="calendar-dates" class="grid grid-cols-7 gap-2">
 <!-- Empty slots for alignment -->
 <div class="aspect-square"></div>
 <div class="aspect-square"></div>
@@ -313,14 +313,13 @@
 <!-- Time Slots -->
 <div class="mt-auto">
 <h3 class="font-headline-md text-headline-md text-on-surface mb-4">Available Times</h3>
-<div class="grid grid-cols-3 md:grid-cols-4 gap-3">
+<div id="time-slots" class="grid grid-cols-3 md:grid-cols-4 gap-3">
 <button class="py-3 rounded-lg border border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary transition-all font-body-md text-body-md bg-surface-container/50">09:00 AM</button>
 <button class="py-3 rounded-lg border border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary transition-all font-body-md text-body-md bg-surface-container/50">10:30 AM</button>
 <button class="py-3 rounded-lg border border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary transition-all font-body-md text-body-md bg-surface-container/50">11:00 AM</button>
 <!-- Selected Time -->
-<button class="py-3 rounded-lg border border-primary text-primary transition-all font-body-md text-body-md bg-primary/10 relative overflow-hidden">
+<button class="py-3 rounded-lg border border-primary text-primary transition-all font-body-md text-body-md font-semibold bg-[#1e1f23]/50 shadow-[0_0_15px_rgba(212,175,55,0.4)]">
                             01:30 PM
-                            <div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
 </button>
 <button class="py-3 rounded-lg border border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary transition-all font-body-md text-body-md bg-surface-container/50">03:00 PM</button>
 <button class="py-3 rounded-lg border border-outline-variant/30 text-on-surface-variant opacity-30 cursor-not-allowed font-body-md text-body-md bg-surface-container/20">04:30 PM</button>
@@ -351,11 +350,71 @@
 <span class="font-caption text-caption uppercase mt-1">My Bookings</span>
 </div>
 <div class="flex flex-col items-center justify-center text-on-surface-variant active:bg-white/5 w-full h-full cursor-pointer">
-<span class="material-symbols-outlined">person</span>
-<span class="font-caption text-caption uppercase mt-1">Profile</span>
+<span class="material-symbols-outlined">call</span>
+<span class="font-caption text-caption uppercase mt-1">Contact</span>
 </div>
 </nav>
 
+<!-- Footer -->
+<footer id="contact" class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-16 border-t border-outline-variant/10 pb-32 md:pb-8 mt-auto">
+  <div class="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-primary text-2xl">content_cut</span>
+          <span class="font-display-lg text-3xl font-bold text-primary">RoyalCuts</span>
+        </div>
+        <p class="font-body-md text-sm text-on-surface-variant max-w-sm leading-relaxed">
+          Exclusivity, Meticulous Detail, and Cinematic Elegance. We provide
+          premium grooming services tailored for the individual.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h4 class="font-label-md font-bold text-on-surface mb-6 uppercase tracking-widest text-xs">
+          Navigation
+        </h4>
+        <ul class="space-y-3 font-body-md text-sm text-on-surface-variant">
+          <li><a href="/" class="hover:text-primary transition-colors">Home</a></li>
+          <li><a href="/services" class="hover:text-primary transition-colors">Services</a></li>
+          <li><a href="/book" class="hover:text-primary transition-colors">Book Appointment</a></li>
+          <li><a href="#contact" class="hover:text-primary transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-label-md font-bold text-on-surface mb-6 uppercase tracking-widest text-xs">
+          Contact
+        </h4>
+        <ul class="space-y-4 font-body-md text-sm text-on-surface-variant">
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-primary text-base mt-0.5">location_on</span>
+            <span>123 Luxury Ave, Suite 100<br />New York, NY 10001</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-base">mail</span>
+            info@royalcuts.com
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-base">phone</span>
+            +1 (555) 123-4567
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-outline-variant/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant font-body-md">
+      <span>© 2024 RoyalCuts Luxury Barber. All rights reserved.</span>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
 <!-- ===== WhatsApp Booking Modal ===== -->
 <div id="waModal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 hidden">
   <!-- Backdrop -->
@@ -429,16 +488,51 @@
   let selectedTimeStr = "01:30 PM";
   let selectedService = "The Royal Shave & Cut";
 
-  // Intercept time slot clicks to track selection
-  document.querySelectorAll('.grid button').forEach(btn => {
-    btn.addEventListener('click', function() {
-      const txt = this.textContent.trim();
-      if (txt.includes('AM') || txt.includes('PM')) {
+  // Interactive Calendar Dates
+  const calendarDates = document.getElementById('calendar-dates');
+  if (calendarDates) {
+    calendarDates.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        if (this.classList.contains('cursor-not-allowed')) return;
+        // Reset all buttons to default styling
+        calendarDates.querySelectorAll('button').forEach(b => {
+          if (!b.classList.contains('cursor-not-allowed')) {
+            b.className = "aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors";
+          }
+        });
+        // Apply yellow circle (bg-primary) to the selected date
+        this.className = "aspect-square rounded-full flex items-center justify-center font-body-md text-body-md bg-primary text-[#0a0a0a] font-bold shadow-[0_0_15px_rgba(212,175,55,0.4)]";
+        
+        const day = this.textContent.trim().replace(/[^0-9]/g, '');
+        selectedDateStr = day + " Nov 2024";
+        document.getElementById('summaryDate').textContent = selectedDateStr;
+      });
+    });
+  }
+
+  // Interactive Time Slots
+  const timeSlotsContainer = document.getElementById('time-slots');
+  if (timeSlotsContainer) {
+    timeSlotsContainer.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        if (this.classList.contains('cursor-not-allowed')) return;
+        // Reset all
+        timeSlotsContainer.querySelectorAll('button').forEach(b => {
+          if (!b.classList.contains('cursor-not-allowed')) {
+            b.className = "py-3 rounded-lg border border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary transition-all font-body-md text-body-md bg-surface-container/50";
+            b.innerHTML = b.textContent.trim();
+          }
+        });
+        // Set active
+        this.className = "py-3 rounded-lg border border-primary text-primary transition-all font-body-md text-body-md font-semibold bg-[#1e1f23]/50 shadow-[0_0_15px_rgba(212,175,55,0.4)]";
+        this.innerHTML = this.textContent.trim();
+        
+        const txt = this.textContent.trim();
         selectedTimeStr = txt;
         document.getElementById('summaryTime').textContent = txt;
-      }
+      });
     });
-  });
+  }
 
   function openBookingModal() {
     document.getElementById('summaryBarber').textContent = selectedBarberName;

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="mt-auto border-t border-white/5 bg-[#0a0a0a] pt-16 pb-24 md:pb-8">
+    <footer id="contact" className="mt-auto border-t border-white/5 bg-[#0a0a0a] pt-16 pb-24 md:pb-8">
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
@@ -37,7 +37,7 @@ export function Footer() {
               <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
               <li><Link href="/services" className="hover:text-primary transition-colors">Services</Link></li>
               <li><Link href="/book" className="hover:text-primary transition-colors">Book Appointment</Link></li>
-              <li><Link href="/dashboard" className="hover:text-primary transition-colors">My Dashboard</Link></li>
+              <li><Link href="/#contact" className="hover:text-primary transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 

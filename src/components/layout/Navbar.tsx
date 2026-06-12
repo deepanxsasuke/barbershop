@@ -9,7 +9,7 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
   { label: "Book", href: "/book" },
-  { label: "Dashboard", href: "/dashboard" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export function Navbar() {
@@ -98,7 +98,7 @@ export function Navbar() {
           { icon: "home", label: "Home", href: "/" },
           { icon: "content_cut", label: "Services", href: "/services" },
           { icon: "event_note", label: "Book", href: "/book" },
-          { icon: "person", label: "Profile", href: "/dashboard" },
+          { icon: "call", label: "Contact", href: "#contact" },
         ].map((item) => (
           <Link
             key={item.href}
